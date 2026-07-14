@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Divya Garima — Strategic Executive Assistant and Business Coordinator supporting senior leadership through executive coordination, accountability systems, and AI enabled workflows.">
+  <meta name="theme-color" content="#123a3a">
+  <meta property="og:title" content="Divya Garima — Strategic Executive Assistant">
+  <meta property="og:description" content="Executive support that protects leadership attention and turns recurring operational friction into dependable systems.">
+  <meta property="og:type" content="website">
+  <title>Divya Garima — Strategic Executive Assistant</title>
+
+  <style>
+    :root {
+      --ink: #153234;
+      --muted: #637778;
+      --teal: #0d7771;
+      --teal-dark: #123a3a;
+      --teal-soft: #dff1ed;
+      --cream: #f7f4ed;
+      --white: #ffffff;
+      --line: #d9e4e1;
+      --accent: #dd7b5c;
+      --shadow: 0 18px 50px rgba(18, 58, 58, 0.12);
+      --radius: 24px;
+      --shell: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--shell));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--white);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 237, 0.92);
+      border-bottom: 1px solid rgba(21, 50, 52, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--white);
+      background: var(--teal-dark);
+      box-shadow: 0 8px 24px rgba(18, 58, 58, 0.2);
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:not(.button):hover {
+      color: var(--teal);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      width: 20px;
+      height: 2px;
+      margin: 4px auto;
+      display: block;
+      background: var(--ink);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--teal);
+      box-shadow: 0 12px 28px rgba(13, 119, 113, 0.24);
+    }
+
+    .button-primary:hover {
+      background: #096963;
+    }
+
+    .button-secondary {
+      color: var(--teal-dark);
+      border-color: rgba(18, 58, 58, 0.2);
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 84px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 440px;
+      height: 440px;
+      right: -160px;
+      top: -160px;
+      background: rgba(129, 205, 190, 0.28);
+    }
+
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      left: -160px;
+      bottom: -180px;
+      background: rgba(221, 123, 92, 0.15);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
+      gap: 72px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 24px;
+      font-size: clamp(2.75rem, 6vw, 5.45rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.22rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin-bottom: 28px;
+      color: #4e6667;
+      font-size: clamp(1.08rem, 2vw, 1.3rem);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 24px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      position: relative;
+      padding-left: 24px;
+      color: #405a5b;
+      font-weight: 650;
+    }
+
+    .hero-points li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .availability::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #37a475;
+      box-shadow: 0 0 0 6px rgba(55, 164, 117, 0.12);
+    }
+
+    .impact-panel {
+      position: relative;
+      padding: 30px;
+      color: var(--white);
+      border-radius: 30px;
+      background: linear-gradient(150deg, #123a3a, #0a5f5a);
+      box-shadow: var(--shadow);
+    }
+
+    .impact-panel::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .impact-kicker {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
+      color: #b8ddd5;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .impact-feature {
+      position: relative;
+      z-index: 1;
+      padding: 10px 0 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .impact-feature strong {
+      display: block;
+      font-size: 4.3rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .impact-feature span {
+      color: #d9ece8;
+    }
+
+    .impact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding-top: 20px;
+    }
+
+    .impact-card {
+      min-height: 122px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .impact-card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.7rem;
+      letter-spacing: -0.04em;
+    }
+
+    .impact-card span {
+      color: #cfe3df;
+      font-size: 0.88rem;
+    }
+
+    .section-heading {
+      max-width: 770px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading p:last-child {
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .problem-section {
+      background: var(--white);
+    }
+
+    .problem-grid,
+    .proof-grid,
+    .method-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .problem-card,
+    .proof-card,
+    .method-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 12px 36px rgba(18, 58, 58, 0.06);
+    }
+
+    .problem-card {
+      padding: 28px;
+    }
+
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 24px;
+      border-radius: 14px;
+      color: var(--teal-dark);
+      background: var(--teal-soft);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .problem-card p,
+    .proof-card p,
+    .method-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .reality-strip {
+      margin-top: 22px;
+      padding: 24px 28px;
+      border-left: 5px solid var(--accent);
+      border-radius: 0 18px 18px 0;
+      background: #fff6f1;
+    }
+
+    .reality-strip p {
+      margin: 0;
+      font-size: 1.04rem;
+    }
+
+    .proof-section {
+      background: linear-gradient(180deg, #f7f4ed 0%, #edf5f3 100%);
+    }
+
+    .proof-grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .proof-card {
+      grid-column: span 4;
+      padding: 28px;
+    }
+
+    .proof-card.featured {
+      grid-column: span 8;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(210px, 0.85fr);
+      gap: 28px;
+      color: var(--white);
+      border: none;
+      background: var(--teal-dark);
+    }
+
+    .proof-card.featured p {
+      color: #cde2df;
+    }
+
+    .proof-card.featured ul {
+      margin: 18px 0 0;
+      padding-left: 20px;
+      color: #e2f0ee;
+    }
+
+    .proof-card.featured li + li {
+      margin-top: 7px;
+    }
+
+    .proof-result {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px;
+      border-radius: 20px;
+      color: var(--teal-dark);
+      background: var(--white);
+    }
+
+    .proof-result strong {
+      font-size: 3.2rem;
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .proof-result span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .proof-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .method-section {
+      background: var(--white);
+    }
+
+    .method-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .method-card {
+      position: relative;
+      padding: 34px 28px 30px;
+      overflow: hidden;
+    }
+
+    .method-card::before {
+      content: attr(data-letter);
+      position: absolute;
+      right: 12px;
+      top: -24px;
+      color: rgba(13, 119, 113, 0.08);
+      font-size: 8rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .method-card h3,
+    .method-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .skills-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+    }
+
+    .skills-panel > div {
+      padding: 26px;
+      background: #f9fbfa;
+    }
+
+    .skills-label {
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .skills-panel p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .bridge-section {
+      color: var(--white);
+      background: var(--teal-dark);
+    }
+
+    .bridge-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .bridge-copy p:last-child {
+      color: #bed4d1;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .path {
+      padding: 28px;
+      border-radius: 22px;
+    }
+
+    .path-muted {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .path-positive {
+      color: var(--teal-dark);
+      background: var(--white);
+    }
+
+    .path-label {
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .path ul {
+      margin: 18px 0 0;
+      padding-left: 20px;
+    }
+
+    .path li + li {
+      margin-top: 8px;
+    }
+
+    .contact-section {
+      background: #edf5f3;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .contact-links a {
+      width: fit-content;
+      color: var(--teal-dark);
+      font-weight: 800;
+    }
+
+    .contact-links a:hover {
+      color: var(--teal);
+    }
+
+    .contact-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #cad9d6;
+      border-radius: 13px;
+      color: var(--ink);
+      background: #fbfdfc;
+      outline: none;
+    }
+
+    input {
+      min-height: 50px;
+      padding: 0 14px;
+    }
+
+    textarea {
+      min-height: 145px;
+      padding: 14px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(13, 119, 113, 0.11);
+    }
+
+    .contact-card .button {
+      width: 100%;
+      border: none;
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .site-footer {
+      padding: 34px 0;
+      color: #c9dcda;
+      background: #0c2d2e;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .footer-copy strong {
+      display: block;
+      color: var(--white);
+    }
+
+    .footer-copy p {
+      margin: 4px 0 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-weight: 750;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .bridge-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 48px;
+      }
+
+      .problem-grid,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-card,
+      .proof-card.featured {
+        grid-column: span 12;
+      }
+
+      .skills-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: grid;
+      }
+
+      .menu-button {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(calc(100% - 28px), var(--shell));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 72px 0 64px;
+      }
+
+      h1 {
+        font-size: clamp(2.65rem, 14vw, 4rem);
+      }
+
+      .hero-points,
+      .impact-grid,
+      .compare-grid,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-feature strong {
+        font-size: 3.5rem;
+      }
+
+      .proof-card.featured {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Divya Garima home">
+        <span class="brand-mark">DG</span>
+        <span class="brand-copy">Divya Garima<span>Executive Assistant — Business Operations</span></span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="#challenge">The challenge</a>
+        <a href="#proof">Proof</a>
+        <a href="#approach">Approach</a>
+        <a class="button button-primary" href="#contact">Talk to Divya</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Strategic Executive Assistant to senior leadership</p>
+          <h1>Your leaders should be making decisions — not chasing calendars, follow ups, and broken processes.</h1>
+          <p class="hero-lead">I protect executive attention, drive cross functional commitments to closure, and build practical workflows that remove recurring operational friction.</p>
+
+          <ul class="hero-points" aria-label="Core strengths">
+            <li>Complex calendars, meetings, travel, and confidential communication</li>
+            <li>Action tracking across seven plus business functions</li>
+            <li>AI and workflow systems that strengthen accountability</li>
+            <li>High judgment coordination in time sensitive environments</li>
+          </ul>
+
+          <div class="button-row">
+            <a class="button button-primary" href="#contact">Start a conversation</a>
+            <a class="button button-secondary" href="Divya_Garima_Resume.pdf" target="_blank" rel="noopener">View résumé</a>
+          </div>
+
+          <p class="availability">Open to Executive Assistant and Administrative Business Partner roles</p>
+        </div>
+
+        <aside class="impact-panel reveal" aria-label="Selected measurable impact">
+          <p class="impact-kicker">Measured impact</p>
+          <div class="impact-feature">
+            <strong>11.7×</strong>
+            <span>ROI delivered through strategic international sourcing</span>
+          </div>
+          <div class="impact-grid">
+            <div class="impact-card">
+              <strong>6 to 8 hrs</strong>
+              <span>leadership coordination time saved each week</span>
+            </div>
+            <div class="impact-card">
+              <strong>~50%</strong>
+              <span>coordination time reduced through automation</span>
+            </div>
+            <div class="impact-card">
+              <strong>~45%</strong>
+              <span>improvement in reporting compliance</span>
+            </div>
+            <div class="impact-card">
+              <strong>7+</strong>
+              <span>business functions aligned through structured follow through</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="challenge">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">The reality</p>
+          <h2>Executive friction rarely looks dramatic. It quietly consumes the week.</h2>
+          <p>Calendar conflicts, missed follow ups, scattered ownership, and repetitive reporting appear small in isolation. Together, they reduce decision time, weaken accountability, and pull leaders back into operational detail.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <span class="number">01</span>
+            <h3>Attention gets fragmented</h3>
+            <p>When priorities, meetings, and stakeholder requests compete without a clear filter, leadership time is spent reacting instead of deciding.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <span class="number">02</span>
+            <h3>Commitments lose ownership</h3>
+            <p>Action items that live in notes, chats, or memory create repeated follow ups, unclear accountability, and avoidable escalation.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <span class="number">03</span>
+            <h3>Manual work keeps returning</h3>
+            <p>Recurring reminders, reports, and status checks consume capable people because the underlying workflow was never redesigned.</p>
+          </article>
+        </div>
+
+        <div class="reality-strip reveal">
+          <p><strong>The real need is not more help —</strong> it is a trusted operating partner who can anticipate, prioritise, coordinate, and improve the system behind the work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="proof">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Authority and proof</p>
+          <h2>I do not only manage the work — I make the work easier to run.</h2>
+          <p>My experience combines executive support, business coordination, process improvement, vendor management, and AI enabled automation in a fast moving technology environment.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card featured reveal">
+            <div>
+              <div class="proof-meta">
+                <span>Strategic procurement</span>
+                <span>Rajasthan Vidhan Sabha project</span>
+              </div>
+              <h3>International sourcing that protected quality, timelines, and commercial value</h3>
+              <p>Spearheaded direct international sourcing and vendor negotiation for PoE switches — taking ownership beyond assigned responsibilities and coordinating a high impact business outcome.</p>
+              <ul>
+                <li>Managed international vendor communication and negotiation</li>
+                <li>Balanced cost, delivery risk, quality, and project timelines</li>
+                <li>Recognised by senior leadership and featured by the company</li>
+              </ul>
+            </div>
+            <div class="proof-result">
+              <strong>11.7×</strong>
+              <span>return on investment</span>
+            </div>
+          </article>
+
+          <article class="proof-card reveal">
+            <div class="proof-meta">
+              <span>Zoho Cliq</span>
+              <span>Automation</span>
+            </div>
+            <h3>Task Automation Bot</h3>
+            <p>Built an end to end workflow that assigns tasks, sets due dates, sends reminders, and escalates overdue items — replacing manual follow up and reducing coordination time by approximately 50%.</p>
+          </article>
+
+          <article class="proof-card reveal">
+            <div class="proof-meta">
+              <span>Reporting</span>
+              <span>Accountability</span>
+            </div>
+            <h3>Organisation Wide EOD App</h3>
+            <p>Created a daily reporting system that flags missed submissions and triggers escalation reminders — improving reporting compliance by approximately 45%.</p>
+          </article>
+
+          <article class="proof-card reveal">
+            <div class="proof-meta">
+              <span>Zoho Agents</span>
+              <span>Employee support</span>
+            </div>
+            <h3>HR AI Assistant</h3>
+            <p>Enabled employee self service for recurring queries and routed unresolved cases to HR — reducing repetitive manual query volume by approximately 40%.</p>
+          </article>
+
+          <article class="proof-card reveal">
+            <div class="proof-meta">
+              <span>Executive operations</span>
+              <span>Leadership support</span>
+            </div>
+            <h3>Complex coordination with proactive prioritisation</h3>
+            <p>Manage calendars, leadership reviews, vendor discussions, travel, confidential communication, and stakeholder calls — saving six to eight hours of coordination time each week.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="approach">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How I work</p>
+          <h2>Anticipate. Align. Automate.</h2>
+          <p>A practical operating method for protecting leadership time and turning execution into a dependable rhythm.</p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card reveal" data-letter="A">
+            <h3>Anticipate</h3>
+            <p>Look beyond today’s calendar — identify conflicts, dependencies, decision points, and stakeholder risks before they become escalations.</p>
+          </article>
+
+          <article class="method-card reveal" data-letter="A">
+            <h3>Align</h3>
+            <p>Translate leadership priorities into clear owners, deadlines, meeting rhythm, and follow through across functions.</p>
+          </article>
+
+          <article class="method-card reveal" data-letter="A">
+            <h3>Automate</h3>
+            <p>When repetitive work keeps returning, redesign the process and build a workflow, dashboard, or AI assistant that removes the dependency.</p>
+          </article>
+        </div>
+
+        <div class="skills-panel reveal">
+          <div>
+            <p class="skills-label">Executive support</p>
+            <p>Multiple calendar management — Travel — Meeting preparation — Minutes — Confidential communication</p>
+          </div>
+          <div>
+            <p class="skills-label">Business operations</p>
+            <p>Stakeholder management — Vendor negotiation — Deliverable tracking — Events — Escalation management</p>
+          </div>
+          <div>
+            <p class="skills-label">Systems and tools</p>
+            <p>Zoho Suite — Zoho Cliq — Zoho Agents — Microsoft 365 — Google Workspace — AI productivity tools</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bridge-section">
+      <div class="shell bridge-grid">
+        <div class="bridge-copy reveal">
+          <p class="eyebrow" style="color:#9fd3ca">The choice</p>
+          <h2>There are two ways to handle growing executive complexity.</h2>
+          <p>Continue absorbing it through manual follow ups and individual effort — or create a dependable operating rhythm that protects leadership attention as the organisation grows.</p>
+        </div>
+
+        <div class="compare-grid reveal">
+          <article class="path path-muted">
+            <p class="path-label">The reactive route</p>
+            <h3>Keep solving the same problems repeatedly</h3>
+            <ul>
+              <li>Leaders remain the escalation point</li>
+              <li>Follow through depends on memory</li>
+              <li>Recurring work remains manual</li>
+              <li>Execution visibility stays fragmented</li>
+            </ul>
+          </article>
+
+          <article class="path path-positive">
+            <p class="path-label">The strategic route</p>
+            <h3>Build support that improves the system</h3>
+            <ul>
+              <li>Leadership attention is actively protected</li>
+              <li>Ownership and deadlines stay visible</li>
+              <li>Repeatable work is streamlined</li>
+              <li>Issues are resolved before escalation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="shell contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Ready to talk</p>
+          <h2>Let’s give your leadership team more room to lead.</h2>
+          <p>I am open to Executive Assistant, Administrative Business Partner, and Business Coordinator opportunities with leaders who value judgment, ownership, and continuous improvement.</p>
+
+          <div class="contact-links">
+            <a href="mailto:divyagarima1715@gmail.com">divyagarima1715@gmail.com</a>
+            <a href="tel:+917517453368">+91 75174 53368</a>
+            <a href="https://www.linkedin.com/in/divya-garima" target="_blank" rel="noopener">LinkedIn profile ↗</a>
+          </div>
+        </div>
+
+        <form class="contact-card reveal" id="contact-form">
+          <div class="field-row">
+            <label>
+              Name
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Work email
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <label>
+            Company or role
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </label>
+
+          <label>
+            What would you like to discuss?
+            <textarea id="message" name="message" required></textarea>
+          </label>
+
+          <button class="button button-primary" type="submit">Start the conversation</button>
+          <p class="form-note">Submitting this form opens your email application with the message prepared — no information is stored on the website.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-copy">
+        <strong>Divya Garima</strong>
+        <p>Strategic Executive Assistant — Business Coordinator — Workflow Builder</p>
+      </div>
+      <div class="footer-links">
+        <a href="Divya_Garima_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a href="mailto:divyagarima1715@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/divya-garima" target="_blank" rel="noopener">LinkedIn</a>
+        <span>© <span id="year"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Website enquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Hi Divya,\n\n${message}\n\nName — ${name}\nEmail — ${email}\nCompany or role — ${company || 'Not provided'}`
+      );
+
+      window.location.href = `mailto:divyagarima1715@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
